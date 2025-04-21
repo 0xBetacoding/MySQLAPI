@@ -12,7 +12,7 @@ import java.util.Objects;
  * Manages database transactions, allowing you to begin, commit, and rollback transactions.
  * Utilizes ThreadLocal to ensure thread safety in multi-threaded environments.
  */
-public class TransactionManager {
+public class SQLTransactionManager {
 
     private final ConnectionProvider connectionProvider;
 
@@ -26,7 +26,7 @@ public class TransactionManager {
      *
      * @param connectionProvider the connection provider to obtain connections from
      */
-    public TransactionManager(@NotNull ConnectionProvider connectionProvider) {
+    public SQLTransactionManager(@NotNull ConnectionProvider connectionProvider) {
         this.connectionProvider = Objects.requireNonNull(connectionProvider, "ConnectionProvider cannot be null");
     }
 

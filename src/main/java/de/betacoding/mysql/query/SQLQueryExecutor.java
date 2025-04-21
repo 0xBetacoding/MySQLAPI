@@ -2,7 +2,7 @@ package de.betacoding.mysql.query;
 
 import de.betacoding.mysql.connection.ConnectionProvider;
 import de.betacoding.mysql.mapping.RowMapper;
-import de.betacoding.mysql.transaction.TransactionManager;
+import de.betacoding.mysql.transaction.SQLTransactionManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -14,18 +14,18 @@ import java.util.Optional;
 /**
  * Facilitates the execution of SQL queries and updates using a {@link ConnectionProvider}.
  */
-public class QueryExecutor {
+public class SQLQueryExecutor {
 
     private final ConnectionProvider connectionProvider;
-    private final TransactionManager transactionManager;
+    private final SQLTransactionManager transactionManager;
 
     /**
-     * Constructs a {@code QueryExecutor} with the specified {@link ConnectionProvider} and {@link TransactionManager}.
+     * Constructs a {@code QueryExecutor} with the specified {@link ConnectionProvider} and {@link SQLTransactionManager}.
      *
      * @param connectionProvider the connection provider
      * @param transactionManager the transaction manager
      */
-    public QueryExecutor(@NotNull ConnectionProvider connectionProvider, @NotNull TransactionManager transactionManager) {
+    public SQLQueryExecutor(@NotNull ConnectionProvider connectionProvider, @NotNull SQLTransactionManager transactionManager) {
         this.connectionProvider = connectionProvider;
         this.transactionManager = transactionManager;
     }
